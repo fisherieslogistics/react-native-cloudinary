@@ -1,19 +1,19 @@
-var FileTransfer = require('NativeModules');
-var Sha1 = require('Sha1');
+import { NativeModules } from 'react-native';
+import Sha1 = from './Sha1';
 
-module.exports = {
-	config: function(options) {
+module.exports new Class({
+	config(options) {
 		/*
 			options = {
 				apiSecret,
 				apiKey,
 				cloudName
 			}
-		*/ 
+		*/
 		this.options = options;
-	},
+	}
 
-	upload: function (uri, successCb, errorCb) {
+	upload (uri) {
 
 		var timestamp = Date.now(),
 			keys = "timestamp=" + timestamp + this.options.apiSecret,
@@ -28,9 +28,12 @@ module.exports = {
 			    }
 			};
 
-		FileTransfer.upload(obj, (err, res) => {
-			if(res) successCb(res);
-		    if(err) errorCb(err);
+		return new Promise((resolve, reject) => {
+			NativeModules.FileTransfer.upload(obj, (err, res) => {
+				if(res) resolve(res);
+			  if(err) reject(err);
+			});
 		});
+
 	}
-};
+});
