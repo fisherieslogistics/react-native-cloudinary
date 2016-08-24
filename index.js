@@ -2,6 +2,7 @@ import { NativeModules } from 'react-native';
 import Sha1 from './Sha1';
 
 export default new Class({
+
 	config(options) {
 		/*
 			options = {
@@ -13,7 +14,7 @@ export default new Class({
 		this.options = options;
 	}
 
-	upload (uri) {
+	upload(uri) {
 
 		var timestamp = Date.now(),
 			keys = "timestamp=" + timestamp + this.options.apiSecret,
