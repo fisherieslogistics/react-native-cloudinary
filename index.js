@@ -1,5 +1,5 @@
 import { NativeModules } from 'react-native';
-import Sha1 = from './Sha1';
+import Sha1 from './Sha1';
 
 export default new Class({
 	config(options) {
