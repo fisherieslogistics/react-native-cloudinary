@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 import Sha1 = from './Sha1';
 
-module.exports new Class({
+export default new Class({
 	config(options) {
 		/*
 			options = {
@@ -36,4 +36,4 @@ module.exports new Class({
 		});
 
 	}
-});
+})
